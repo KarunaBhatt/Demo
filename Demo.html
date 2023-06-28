@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *{
+            background-color: #F4F4F4;
+            font-family: 'Courier New', Courier, monospace
+        }
+        .main-div{
+            text-align: center;
+            font-size: 100px;
+            color: #F8B627;
+            
+        }
+        
+        .name{
+            color: #D33257;
+        }
+        button{
+            display: inline-block;
+            background: #F8B627;
+            color: #F4F4F4;
+            font-size: 50px;
+            font-weight: normal;
+            text-align: center;
+            border-radius: 3px;
+            text-decoration: none;
+            padding: 5px 10px;
+            z-index: 100000;
+            outline: none;
+            border: none;
+            box-shadow: 0px 10px 8px -8px rgba(0, 0, 0, 0.6);
+            cursor: pointer;
+        }
+    </style>
+    <div class="main-div">
+        <p>
+            want to know my Name
+        </p>
+        <!-- <br> -->
+        <p id="showMyName" class="name"></p>
+        <p id="showMyName1" class="name"></p>
+        <p id="showMyName2" class="name"></p>
+        <!-- <br> -->
+        <button id="btn">
+            Click Here
+        </button>
+
+        <button id="stop">
+            Stop
+        </button>
+    </div>
+    <script>
+        let num = 0;
+        let timeRef;
+        const MyName = document.querySelector('#showMyName');
+        const MyName1 = document.querySelector('#showMyName1');
+        const MyName2 = document.querySelector('#showMyName2');
+        const btn = document.querySelector('#btn');
+        const btn1 = document.querySelector('#stop');
+
+        const showMyName = () => {
+            MyName.innerHTML = 'Loading...'
+            setTimeout(() => {
+                MyName.innerHTML = "Vishal Rathod";
+            }, 1000)
+        }
+
+        const showMyName1 = () => {
+            MyName1.innerHTML = 'Loading...'
+            timeRef = setInterval(() => {
+                MyName1.innerHTML = `${num}`;
+                num++;
+            }, 1000)
+        }
+        btn.addEventListener('click', showMyName);
+        btn.addEventListener('click', showMyName1);
+        btn1.addEventListener('click', () => {
+            clearInterval(timeRef);
+        });
+    </script>
+</body>
+</html>
