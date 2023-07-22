@@ -1,0 +1,13 @@
+﻿body {
+    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+    padding : 0px;
+    margin : 0px;
+}
+.input {
+    padding : 0px;
+    margin : 0px;
+    font-size : 2em;
+    padding-top : 100px;
+    border : 5px, solid, green;
+    text-align : center;
+}
